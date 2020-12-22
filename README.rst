@@ -7,12 +7,8 @@ Docker image that runs a cron job which dumps a Postgres database, and uploads i
 Required environment variables
 ==============================
 
-* :code:`CRON_SCHEDULE`: The time schedule part of a crontab file (e.g: :code:`15 3 * * *` for every night 03:15)
-* :code:`DB_HOST`: Postgres hostname
-* :code:`DB_PASS`: Postgres password
-* :code:`DB_USER`: Postgres username
-* :code:`DB_NAME`: Name of database
-* :code:`S3_PATH`: Amazon S3 path in the format: s3://bucket-name/some/path
+* :code:`BACKUP_SCHEDULE`: The time schedule part of a crontab file (e.g: :code:`15 3 * * *` for every night 03:15)
+* :code:`BACKUP_PATH_S3`: Amazon S3 path in the format: s3://bucket-name/some/path
 * :code:`AWS_ACCESS_KEY_ID`
 * :code:`AWS_SECRET_ACCESS_KEY`
 * :code:`AWS_DEFAULT_REGION`
@@ -34,11 +30,7 @@ To do this, we run the container with the command: :code:`/backup/restore.sh [S3
 
 The following environment variables are required:
 
-* :code:`DB_HOST`: Postgres hostname
-* :code:`DB_PASS`: Postgres password
-* :code:`DB_USER`: Postgres username
-* :code:`DB_NAME`: Name of database
-* :code:`S3_PATH`: Amazon S3 path in the format: s3://bucket-name/some/path
+* :code:`BACKUP_SCHEDULE`: Amazon S3 path in the format: s3://bucket-name/some/path
 * :code:`AWS_ACCESS_KEY_ID`
 * :code:`AWS_SECRET_ACCESS_KEY`
 * :code:`AWS_DEFAULT_REGION`
